@@ -1,4 +1,4 @@
-#Eco_Bricks_Channel
+Eco_Bricks_Channel
 Steps to set up the application
 
 npm install
