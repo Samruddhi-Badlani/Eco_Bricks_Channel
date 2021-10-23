@@ -20,7 +20,7 @@ router.get("/login", checkAuthenticated, (req, res) => {
 
 router.get("/dashboard", checkNotAuthenticated, (req, res) => {
     console.log(req.isAuthenticated());
-    res.render("dashboard", { user: req.user.name });
+    res.render("dashboard", { user: req.user.name, my_null_value : req.user.xyz });
   });
 router.get("/logout", (req, res) => {
     req.logout();
