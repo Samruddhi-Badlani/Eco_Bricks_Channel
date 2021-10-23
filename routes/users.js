@@ -4,6 +4,7 @@ const passport = require("passport");
 const pool = require("../db");
 const bcrypt = require("bcrypt")
 const session = require("express-session");
+const flash = require("express-flash");
 const initializePassport = require("../passportConfig")
 
 initializePassport(passport);

@@ -4,6 +4,7 @@ const flash = require('express-flash')
 const passport = require("passport");
 const session = require("express-session");
 require("dotenv").config();
+const bcrypt = require("bcrypt")
 const initializePassport = require("./passportConfig");
 
 initializePassport(passport);
@@ -27,20 +28,14 @@ app.use(
   // Store our variables to be persisted across the whole session. Works with app.use(Session) above
   app.use(passport.session());
   app.use(flash());
-  app.use((req, res, next) => {
-    res.locals.success = req.flash("success");
-    res.locals.error = req.flash("error");
-    next();
-  });
+
   
-app.use("/users",users);
+
 app.get("/", (req, res) => {
-    
-    pool.query("SELECT * FROM users",(err,result)=>{
-        console.log(result.rows);
-        res.render("index");
-    })
-  });
+  res.render("index");
+});
+
+app.use('/users',users);
 app.listen(3000, () => {
     console.log(`Server running on port `);
   });

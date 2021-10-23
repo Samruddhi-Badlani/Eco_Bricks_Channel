@@ -1,12 +1,12 @@
 const LocalStrategy = require("passport-local").Strategy;
 const  pool  = require("./db");
 const bcrypt = require("bcrypt");
+
 function initialize(passport) {
   console.log("Initialized");
 
   const authenticateUser = (email, password, done) => {
     console.log(email, password);
-  
     pool.query(
       `SELECT * FROM users WHERE email = $1`,
       [email],
@@ -19,10 +19,6 @@ function initialize(passport) {
         if (results.rows.length > 0) {
           const user = results.rows[0];
 
-          console.log("Password type ",password);
-
-          console.log("And your password is  this ",user.password);
-
           bcrypt.compare(password, user.password, (err, isMatch) => {
             if (err) {
               console.log(err);
@@ -31,11 +27,9 @@ function initialize(passport) {
               return done(null, user);
             } else {
               //password is incorrect
-              return done(null, false, { message: "Password is incorrect" });
+              return done(null, false,{message: "Password is incorrect" });
             }
           });
-            
-          
         } else {
           // No user
           return done(null, false, {
