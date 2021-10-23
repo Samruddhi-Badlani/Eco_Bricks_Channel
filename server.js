@@ -25,6 +25,7 @@ app.use(
   );
   // Funtion inside passport which initializes passport
   app.use(passport.initialize());
+  app.use(express.static(__dirname + '/public'));
   // Store our variables to be persisted across the whole session. Works with app.use(Session) above
   app.use(passport.session());
   app.use(flash());
