@@ -117,8 +117,56 @@ router.post(
     res.redirect("/users/login");
   }
 
-  router.post('/profile',(req,res)=>{
+  router.post('/profile',checkNotAuthenticated,(req,res)=>{
+    console.log(req.isAuthenticated());
     console.log(req.body.myUserName);
-    res.render('profile',{user:req.body.myUser});
-  })
+    console.log(req.body.myUserEmail);
+    console.log(req.body.myUserCity);
+    console.log(req.body.myUserState);
+    console.log(req.body.myUserCountry);
+    console.log(req.body.myUserAddress);
+
+    myUser ={
+      id:req.body.myUserId,
+      name:req.body.myUserName,
+      email:req.body.myUserEmail,
+      phone:req.body.myUserPhone,
+      city:req.body.myUserCity,
+      state:req.body.myUserState,
+      country:req.body.myUserCountry,
+      address:req.body.myUserAddress,
+      jobRole:req.body.myUserJobRole,
+      cost:req.body.myUserCost,
+      capacity:req.body.myUserCapacity
+
+    }
+  
+    res.render('profile',{user : myUser});
+  });
+
+  router.post('/profileUpdate',checkNotAuthenticated,(req,res)=>{
+    console.log("Hurray I did fill form ",req.body.id);
+    myUser ={
+      id:req.body.id,
+      name:req.body.name,
+      email:req.body.email,
+      phone:req.body.phone,
+      city:req.body.city,
+      state:req.body.state,
+      country:req.body.country,
+      address:req.body.address,
+      jobRole:req.body.jobRole,
+      cost:req.body.cost,
+      capacity:req.body.capacity
+
+    }
+    pool.query("UPDATE users SET name=$1,email=$3,phone=$4,city=$5,state=$6,country=$7,address=$8,job_role=$9,cost=$10,capacity=$11 WHERE id=$2",[myUser.name,myUser.id,myUser.email,myUser.phone,myUser.city,myUser.state,myUser.country,myUser.address,myUser.jobRole,myUser.cost,myUser.capacity],(err,results)=>{
+      if(err){
+        throw err;
+      }
+
+      res.render('dashboard',{user:myUser});
+    })
+    
+  });
 module.exports = router;

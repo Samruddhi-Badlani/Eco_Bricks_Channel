@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
+
 <body>
-    <h1> Hello profile opened</h1>
-    
-  
+    <a href="/users/dashboard">Go Back to dashboard</a>
+    <div class="Head">
+        <img src="../css/images/profile-img.png" alt="" width="40px" height="40px">
+        <span>
+            <%= user.name %>
+        </span>
+    </div>
+    <form action="/users/profileUpdate" method="POST" class="GetInfoForm">
+        <input type="hidden" name='id' value=<%=user.id %>>
+        <label class="labelFields" for="name">Name</label>
+        <input class="inputFields" type="text" name='name' id='name' value=<%=user.name %> >
+        <label class="labelFields" for="name">Email</label>
+        <input class="inputFields" type="text" name='email' id='email' value=<%=user.email %> >
+        <label class="labelFields" for="name">Phone</label>
+        <input class="inputFields" type="text" name='phone' id='phone' value=<%=user.phone %> >
+        <label class="labelFields" for="name">City</label>
+        <input class="inputFields" type="text" name='city' id='city' value=<%=user.city %> >
+        <label class="labelFields" for="name">State</label>
+        <input class="inputFields" type="text" name='state' id='state' value=<%=user.state %> >
+        <label class="labelFields" for="name">Country</label>
+        <input class="inputFields" type="text" name='country' id='country' value=<%=user.country %> >
+        <label class="labelFields" for="name">Address</label>
+        <input class="inputFields" type="text" name='address' id='country' value=<%=user.address %> >
+        <label class="labelFields" for="name">Job Role</label>
+        <input class="inputFields" type="text" name='jobRole' id='jobRole' value=<%=user.jobRole %> >
+        <label class="labelFields" for="name">Cost</label>
+        <input class="inputFields" type="number" name='cost' id='country' value=<%=user.cost %> >
+        <label class="labelFields" for="name">Capacity</label>
+        <input class="inputFields" type="number" name='capacity' id='country' value=<%=user.capacity %> >
+        <input type="submit" value="Save">
+    </form>
+
+    <div id="Info">
+
+
+    </div>
+
+
+
+
 </body>
+
 </html>
