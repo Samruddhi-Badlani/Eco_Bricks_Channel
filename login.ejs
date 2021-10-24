@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <%- include('layout'); -%>
+</head>
+<body>
+  <form class="bg" action="/users/login" method="POST">
+    <h3 class="centered">Login Here </h3><br>
+    <ul>
+      <% if (typeof errors != 'undefined') { %> <% errors.forEach(error => { %>
+      <li><%= error.message %></li>
+      <% }) %> <% } %>
+    </ul>
+
+    <ul>
+  
+      <% if(messages.success_msg) { %>
+      <li><%= messages.success_msg %></li>
+      <% } %>
+      <% if(messages.message) { %>
+        <li><%= messages.message %></li>
+        <% } %>
+    </ul>
+
+    <ul>
+     
+      <% if (messages.error) { %>
+      <li><%= messages.error %></li>
+      <% } %>
+    
+    </ul>
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email" required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-10">
+        <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password" required>
+      </div>
+    </div>
+    
+    <div class="form-group row ">
+      <div class="col-sm-10 text-center mx-auto" >
+        <button type="submit" class="btn btn-primary btn-block" >Log In</button>
+      </div>
+    </div>
+    <div class="centered">
+      <a href="/users/register" class="over">Register</a>
+    </div>
+    
+  </form>
+  </body>
+</html>
