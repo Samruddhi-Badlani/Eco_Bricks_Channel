@@ -24,7 +24,7 @@ router.get("/dashboard", checkNotAuthenticated, (req, res) => {
   });
 router.get("/logout", (req, res) => {
     req.logout();
-    res.render("index", { message: "You have logged out successfully" });
+    res.render("index");
   });
 
 router.post("/register", async(req,res)=>{

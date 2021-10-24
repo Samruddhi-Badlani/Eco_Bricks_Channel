@@ -2,17 +2,15 @@
     font-family: sans-serif;
     box-sizing: border-box;
 }
-
 body{
     /* background-image: url('https://cdn.pixabay.com/photo/2018/05/30/09/58/pollution-3441119_960_720.jpg'); */
-    background-image: url('https://tse3.mm.bing.net/th?id=OIP.zDBTk2H43M5KUHGzF-QPUQHaE5&pid=Api&P=0&w=235&h=156');
+    background-image: url('../css/images/bottle.jpg');
     background-color: #cccccc; 
-    height: 500px; 
+    height: 100%; 
     width : 100%;
     
-    background-position: center; 
     background-repeat: no-repeat; 
-    background-size: cover; 
+    background-size:cover; 
 }
 .welcome div{
     margin: 10px auto;
