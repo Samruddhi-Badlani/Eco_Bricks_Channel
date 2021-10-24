@@ -1,6 +1,10 @@
-
+.dashHead{
+    display: flex;
+    flex-direction:row ;
+}
 #myProfileImage{
-    margin-right: 0px;
+    margin-left: auto;
     height: 40px;
+    margin-top: 10px;
     width: 40px;
 }

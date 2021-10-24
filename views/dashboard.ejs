@@ -18,14 +18,17 @@
   <body>
      <div class="dashHead">
       <h1>Dashboard</h1>
-
-      <img id="myProfileImage" src="../css/images/profile-img.png" alt="" style="float: right;">
+      <form action="/users/profile" method="POST">
+        <input type='hidden' name='myUserName' value = <%= user.name %> >
+        <input type='hidden' name='myUserEmail' value = <%= user.email %> >
+      <input type="image" id="myProfileImage" src="../css/images/profile-img.png" alt="Submit" style="float: right;">
+    </form>
 
      </div>
       
       <a href="/users/logout">Logout</a>
   
-      <h4>Hello <%= user %></h4>
+      <h4>Hello <%= user.name %></h4>
       <h4>Hello <%= my_null_value %></h4>
     
    

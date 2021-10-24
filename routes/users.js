@@ -20,7 +20,7 @@ router.get("/login", checkAuthenticated, (req, res) => {
 
 router.get("/dashboard", checkNotAuthenticated, (req, res) => {
     console.log(req.isAuthenticated());
-    res.render("dashboard", { user: req.user.name, my_null_value : req.user.xyz });
+    res.render("dashboard", { user: req.user, my_null_value : req.user.xyz });
   });
 router.get("/logout", (req, res) => {
     req.logout();
@@ -117,5 +117,8 @@ router.post(
     res.redirect("/users/login");
   }
 
-
+  router.post('/profile',(req,res)=>{
+    console.log(req.body.myUserName);
+    res.render('profile',{user:req.body.myUser});
+  })
 module.exports = router;
