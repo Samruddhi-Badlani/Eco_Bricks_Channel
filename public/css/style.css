@@ -1,1 +1,72 @@
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    /* background-image: url('https://cdn.pixabay.com/photo/2018/05/30/09/58/pollution-3441119_960_720.jpg'); */
+    background-image: url('https://tse3.mm.bing.net/th?id=OIP.zDBTk2H43M5KUHGzF-QPUQHaE5&pid=Api&P=0&w=235&h=156');
+    background-color: #cccccc; 
+    height: 500px; 
+    width : 100%;
+    
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+.welcome div{
+    margin: 10px auto;
+    width: 100%;
+ }
+.centered {
+  text-align: center;
+}
+.welcome{
+    border: 1px outset;
+    border-radius: 25px;
+    background-color: rgba(240, 248, 255, 0.527);
+    display:inline-block;
+    margin:15% 30%;
+    padding: 10px;
+    box-shadow:  23px 23px 46px #97bb82,
+             -23px -23px 46px #c7f7ac;
+}
+
+ 
+.welcome ul{
+    list-style-type: none;
+}
+.over:hover{
+    color:red;
+}
+.over{
+    color:blue;
+}
+.welcome:hover{
+    background-color: aliceblue;
+    border-radius: 50px;
+    
+    box-shadow:  27px 27px 77px #bebebe,
+                 -27px -27px 77px #ffffff;
+
+}
+.head{
+    
+    border:none;
+    background-color:aliceblue;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow:  27px 27px 77px #bebebe,
+                 -27px -27px 77px #ffffff;
+}
+.bg{
+    margin: 10% 30%;
+    background-color:aliceblue;
+    padding:10px;
+    border-radius: 10px;
+    box-shadow:  23px 23px 46px #97bb82,
+             -23px -23px 46px #c7f7ac;
+}
+
+
 
