@@ -18,6 +18,23 @@
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <div id="logHead">
+      <a href="/users/logout">Logout</a>
+      <form action="/users/profile" method="POST" >
+        <input type="hidden" name='myUserId' value=<%=user.id %>>
+        <input type='hidden' name='myUserName' value = <%= user.name %> >
+        <input type='hidden' name='myUserEmail' value = <%= user.email %> >
+        <input type='hidden' name='myUserPhone' value = <%= user.phone %> >
+        <input type='hidden' name='myUserCity' value = <%= user.city %> >
+        <input type='hidden' name='myUserState' value = <%= user.state %> >
+        <input type='hidden' name='myUserCountry' value = <%= user.country %> > 
+        <input type='hidden' name='myUserAddress' value = <%= user.address %> >
+        <input type='hidden' name='myUserJobRole' value = <%= user.job_role %> >
+        <input type='hidden' name='myUserCost' value = <%= user.cost %> >
+        <input type='hidden' name='myUserCapacity' value = <%= user.capacity %> >
+      <input type="image" class="myProfileImage" src="../css/images/profile-img.png" alt="Submit" style="float: right;">
+    </form>
+    </div>
+
     <a href="/users/logout">Logout</a>
     <form action="/users/profile" method="POST" >
       <input type="hidden" name='myUserId' value=<%=user.id %>>
