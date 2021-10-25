@@ -12,34 +12,56 @@
 <body>
     <a href="/users/dashboard">Go Back to dashboard</a>
     <div class="Head">
-        <img src="../css/images/profile-img.png" alt="" width="40px" height="40px">
-        <span>
-            <%= user.name %>
-        </span>
+        <div class="flex-item-Head"> <img src="../css/images/profile-img.png" alt="" width="40px" height="40px"></div>
+        <div class="flex-item-Head"><span>
+                <%= user.name %>
+            </span></div>
     </div>
     <form action="/users/profileUpdate" method="POST" class="GetInfoForm">
+
         <input type="hidden" name='id' value=<%=user.id %>>
-        <label class="labelFields" for="name">Name</label>
-        <input class="inputFields" type="text" name='name' id='name' value=<%=user.name %> >
-        <label class="labelFields" for="name">Email</label>
-        <input class="inputFields" type="text" name='email' id='email' value=<%=user.email %> >
-        <label class="labelFields" for="name">Phone</label>
-        <input class="inputFields" type="text" name='phone' id='phone' value=<%=user.phone %> >
-        <label class="labelFields" for="name">City</label>
-        <input class="inputFields" type="text" name='city' id='city' value=<%=user.city %> >
-        <label class="labelFields" for="name">State</label>
-        <input class="inputFields" type="text" name='state' id='state' value=<%=user.state %> >
-        <label class="labelFields" for="name">Country</label>
-        <input class="inputFields" type="text" name='country' id='country' value=<%=user.country %> >
-        <label class="labelFields" for="name">Address</label>
-        <input class="inputFields" type="text" name='address' id='country' value=<%=user.address %> >
-        <label class="labelFields" for="name">Job Role</label>
-        <input class="inputFields" type="text" name='jobRole' id='jobRole' value=<%=user.jobRole %> >
-        <label class="labelFields" for="name">Cost</label>
-        <input class="inputFields" type="number" name='cost' id='country' value=<%=user.cost %> >
-        <label class="labelFields" for="name">Capacity</label>
-        <input class="inputFields" type="number" name='capacity' id='country' value=<%=user.capacity %> >
-        <input type="submit" value="Save">
+        <div class="myInputBox">
+            <label class="labelFields" for="name">Name</label>
+            <input class="inputFields" type="text" name='name' id='name' value=<%=user.name %> required >
+        </div>
+        <div class="myInputBox">
+            <label class="labelFields" for="email">Email</label>
+            <input class="inputFields" type="email" name='email' id='email' value=<%=user.email %> required >
+        </div>
+        <div class="myInputBox">
+            <label class="labelFields" for="phone">Phone</label>
+            <input class="inputFields" type="text" name='phone' id='phone' value=<%=user.phone %> required >
+        </div>
+
+        <div class="myInputBox">
+            <label class="labelFields" for="city">City</label>
+            <input class="inputFields" type="text" name='city' id='city' value=<%=user.city %> required >
+        </div>
+        <div class="myInputBox">
+            <label class="labelFields" for="state">State</label>
+            <input class="inputFields" type="text" name='state' id='state' value=<%=user.state %> required >
+        </div>
+        <div class="myInputBox">
+            <label class="labelFields" for="country">Country</label>
+            <input class="inputFields" type="text" name='country' id='country' value=<%=user.country %> required>
+        </div>
+        <div class="myInputBox">
+            <label class="labelFields" for="address">Address</label>
+            <input class="inputFields" type="text" name='address' id='country' value=<%=user.address %> required>
+        </div>
+        <div class="myInputBox">
+            <label class="labelFields" for="jobRole">Job Role</label>
+            <input class="inputFields" type="text" name='jobRole' id='jobRole' value=<%=user.jobRole %> required>
+        </div>
+        <div class="myInputBox">
+            <label class="labelFields" for="cost">Cost</label>
+            <input class="inputFields" type="number" name='cost' id='country' value=<%=user.cost %> required>
+        </div>
+        <div class="myInputBox">
+            <label class="labelFields" for="capacity">Capacity</label>
+            <input class="inputFields" type="number" name='capacity' id='country' value=<%=user.capacity %> required>
+        </div>
+        <input type="submit" value="Save" id="submitProfile">
     </form>
 
     <div id="Info">

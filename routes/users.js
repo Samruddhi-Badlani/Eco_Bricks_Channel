@@ -125,6 +125,7 @@ router.post(
     console.log(req.body.myUserState);
     console.log(req.body.myUserCountry);
     console.log(req.body.myUserAddress);
+    console.log(req.body.myUserJobRole);
 
     myUser ={
       id:req.body.myUserId,
@@ -145,7 +146,7 @@ router.post(
   });
 
   router.post('/profileUpdate',checkNotAuthenticated,(req,res)=>{
-    console.log("Hurray I did fill form ",req.body.id);
+    console.log("Hurray I did fill form ",req.body.jobRole);
     myUser ={
       id:req.body.id,
       name:req.body.name,
@@ -164,7 +165,6 @@ router.post(
       if(err){
         throw err;
       }
-
       res.render('dashboard',{user:myUser});
     })
     
