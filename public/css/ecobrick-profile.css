@@ -4,3 +4,38 @@ body {
     background-size: cover;
     background-position: center;
    }
+
+.cardsBox{
+    display: flex;
+    flex-direction:row ;
+    flex-wrap: wrap;
+}
+#logHead{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.logHeadItem{
+    display: block;
+    margin:5px;
+   
+    padding: 4px;
+}
+a.logHeadItem {
+    text-decoration: none;
+    color:black;
+    border: 2px solid black;
+   
+}
+a.logHeadItem:hover {
+    background-color: rgb(80, 206, 80);
+   
+}
+.card{
+    padding: 10px;
+    margin:4px;
+    height:400px;
+    width:300px;
+
+}

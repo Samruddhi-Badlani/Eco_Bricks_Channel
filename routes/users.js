@@ -143,7 +143,7 @@ router.post("/profile", checkNotAuthenticated, (req, res) => {
 });
 
 router.post("/profileUpdate", checkNotAuthenticated, (req, res) => {
-  console.log("Hurray I did fill form ", req.body.jobRole);
+  console.log("I did fill form ", req.body.jobRole);
   myUser = {
     id: req.body.id,
     name: req.body.name,
