@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    
+
+
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../css/dashboard.css" />
-    <link rel="stylesheet" href="../css/ecobrick-profile.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/ecobrick-profile.css">
     <title>Eco-brick-Channel</title>
   </head>
   <body>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <div id="logHead">
       <a href="/users/logout">Logout</a>
       <form action="/users/profile" method="POST" >
@@ -40,74 +36,80 @@
     </div>
 
     <a href="/users/logout">Logout</a>
-    <a href="/users/contactlist">contact lsit</a>
+    <form action="/users/profile" method="POST" >
+      <input type="hidden" name='myUserId' value=<%=user.id %>>
+      <input type='hidden' name='myUserName' value = <%= user.name %> >
+      <input type='hidden' name='myUserEmail' value = <%= user.email %> >
+      <input type='hidden' name='myUserPhone' value = <%= user.phone %> >
+      <input type='hidden' name='myUserCity' value = <%= user.city %> >
+      <input type='hidden' name='myUserState' value = <%= user.state %> >
+      <input type='hidden' name='myUserCountry' value = <%= user.country %> > 
+      <input type='hidden' name='myUserAddress' value = <%= user.address %> >
+      <input type='hidden' name='myUserJobRole' value = <%= user.job_role %> >
+      <input type='hidden' name='myUserCost' value = <%= user.cost %> >
+      <input type='hidden' name='myUserCapacity' value = <%= user.capacity %> >
+    <input type="image" class="myProfileImage" src="../css/images/profile-img.png" alt="Submit" style="float: right;">
+  </form>
+</div>
+     
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarTogglerDemo03"
-          aria-controls="navbarTogglerDemo03"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">Eco-brick</a>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">ABOUT</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">FAQs</a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
-      </div>
-    </nav>
-    <br />
-    <div class="card" style="width: 18rem">
-      <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Company x</h5>
-        <p class="card-text">Sell eco bricks to us!</p>
-        <a href="#" class="btn btn-primary">Explore more</a>
-      </div>
+      
+     
+  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Eco-brick</a>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">ABOUT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">FAQs</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
     </div>
-    <br />
-    <div class="card" style="width: 18rem">
-      <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Company y</h5>
-        <p class="card-text">Sell eco-bricks to us!</p>
-        <a href="#" class="btn btn-primary">Explore more</a>
-      </div>
-    </div>
-    <br />
-    <div class="card" style="width: 18rem">
-      <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Company z</h5>
-        <p class="card-text">Sell eco-bricks to us!</p>
-        <a href="#" class="btn btn-primary">Explore more</a>
-      </div>
-    </div>
+  </div>
+</nav>
+<br>
+<div class="card" style="width: 18rem;">
+  <img src="../css/images/eb-1.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Company x</h5>
+    <p class="card-text">Sell eco bricks to us!</p>
+    <a href="#" class="btn btn-primary">Explore more</a>
+  </div>
+</div>
+<br>
+<div class="card" style="width: 18rem;">
+  <img src="../css/images/eb-1.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Company y</h5>
+    <p class="card-text">Sell eco-bricks to us!</p>
+    <a href="#" class="btn btn-primary">Explore more</a>
+  </div>
+</div>
+<br>
+<div class="card" style="width: 18rem;">
+  <img src="../css/images/eb-1.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Company z</h5>
+    <p class="card-text">Sell eco-bricks to us!</p>
+    <a href="#" class="btn btn-primary">Explore more</a>
+  </div>
+</div>
+    
+    
+   
   </body>
 </html>
