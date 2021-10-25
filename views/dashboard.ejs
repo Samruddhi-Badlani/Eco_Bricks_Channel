@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@1&display=swap" rel="stylesheet">
 
 
    
@@ -44,7 +46,7 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">ABOUT</a>
+              <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled">FAQs</a>
@@ -63,9 +65,8 @@
           </form>
         </div>
         <div id="logHead">
-          
-            <a href="/users/contactlist"  class="logHeadItem">contact list</a>
-        
+        <a href="/users/contactlist"  class="logHeadItem">contact list</a>
+       
          
         <a href="/users/logout"  class="logHeadItem">Logout</a>
         <form action="/users/profile" method="POST" class="logHeadItem" >
@@ -82,111 +83,56 @@
           <input type='hidden' name='myUserCapacity' value = <%= user.capacity %> >
         <input type="image" class="myProfileImage" src="../css/images/profile-img.png" alt="Submit" style="float: right;">
       </form>
-      
-  
-      
-      
-    </div>
-      </div>
     </nav>
-    <br />
-    <div class="cardsBox">
-    <div class="card" style="width: 18rem">
-      <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Company x</h5>
-        <p class="card-text">Sell eco bricks to us!</p>
-        <a href="#" class="btn btn-primary">Explore more</a>
+    <div class="split_outer">
+      <div class="split left">
+        <div class="centered">
+          <!-- ek chiz -->
+          <div class="cardsBox">
+            <div class="card" style="width: 18rem">
+              <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Company x</h5>
+                <p class="card-text">Sell eco bricks to us!</p>
+                <a href="#" class="btn btn-primary">Explore more</a>
+              </div>
+            </div>
+
+
+            <div class="card" style="width: 18rem">
+              <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Company y</h5>
+                <p class="card-text">Sell eco-bricks to us!</p>
+                <a href="#" class="btn btn-primary">Explore more</a>
+              </div>
+            </div>
+        </div>
       </div>
-    </div>
-    <br />
-    <div class="card" style="width: 18rem">
-      <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Company y</h5>
-        <p class="card-text">Sell eco-bricks to us!</p>
-        <a href="#" class="btn btn-primary">Explore more</a>
+   
+      <div class="split right">
+        <div class="centered">
+          <!-- dusri chiz -->
+
+          <div class="card" style="width: 18rem">
+            <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Person A</h5>
+              <p class="card-text">Buy eco-bricks from me!</p>
+              <a href="#" class="btn btn-primary">Explore more</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem">
+            <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Person B</h5>
+              <p class="card-text">Buy eco-bricks from me!</p>
+              <a href="#" class="btn btn-primary">Explore more</a>
+            </div>
+          </div>
       </div>
-    </div>
-    <br />
-    <div class="card" style="width: 18rem">
-      <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Company z</h5>
-        <p class="card-text">Sell eco-bricks to us!</p>
-        <a href="#" class="btn btn-primary">Explore more</a>
       </div>
-    </div>
-    <div class="card" style="width: 18rem">
-      <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Person A</h5>
-        <p class="card-text">Buy eco-bricks from me!</p>
-        <a href="#" class="btn btn-primary">Explore more</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem">
-      <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Person B</h5>
-        <p class="card-text">Buy eco-bricks from me!</p>
-        <a href="#" class="btn btn-primary">Explore more</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem">
-      <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Person C</h5>
-        <p class="card-text">Buy eco-bricks from me!</p>
-        <a href="#" class="btn btn-primary">Explore more</a>
-      </div>
-      
-    </div>
-    <div class="card" style="width: 18rem">
-      <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Person C</h5>
-        <p class="card-text">Buy eco-bricks from me!</p>
-        <a href="#" class="btn btn-primary">Explore more</a>
-      </div>
-      
-    </div>
-    <div class="card" style="width: 18rem">
-      <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Person C</h5>
-        <p class="card-text">Buy eco-bricks from me!</p>
-        <a href="#" class="btn btn-primary">Explore more</a>
-      </div>
-      
-    </div>
-    <div class="card" style="width: 18rem">
-      <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Person C</h5>
-        <p class="card-text">Buy eco-bricks from me!</p>
-        <a href="#" class="btn btn-primary">Explore more</a>
-      </div>
-      
-    </div>
-    <div class="card" style="width: 18rem">
-      <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Person C</h5>
-        <p class="card-text">Buy eco-bricks from me!</p>
-        <a href="#" class="btn btn-primary">Explore more</a>
-      </div>
-      
-    </div>
-    <div class="card" style="width: 18rem">
-      <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Person C</h5>
-        <p class="card-text">Buy eco-bricks from me!</p>
-        <a href="#" class="btn btn-primary">Explore more</a>
-      </div>
-      
-    </div>
-  </div>
+    </div>  
   </body>
 </html>

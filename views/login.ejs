@@ -7,11 +7,12 @@
     <title>Login</title>
     <link rel="stylesheet" href="/css/style.css">
     <%- include('layout'); -%>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@1&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <form class="bg" action="/users/login" method="POST">
-    <h3 class="centered">Login Here </h3><br>
+    <h3 class="centered"></h3><br>
     <ul>
       <% if (typeof errors != 'undefined') { %> <% errors.forEach(error => { %>
       <li><%= error.message %></li>

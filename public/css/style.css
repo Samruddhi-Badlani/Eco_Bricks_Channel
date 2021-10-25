@@ -1,5 +1,6 @@
-*{
-    font-family: sans-serif;
+*
+{
+    font-family: 'IM Fell DW Pica', serif;
     box-sizing: border-box;
 }
 body{
@@ -56,6 +57,7 @@ body{
     border-radius: 10px;
     box-shadow:  27px 27px 77px #bebebe,
                  -27px -27px 77px #ffffff;
+    
 }
 .bg{
     margin: 10% 30%;
