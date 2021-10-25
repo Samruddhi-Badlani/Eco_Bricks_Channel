@@ -191,4 +191,33 @@ router.get("/contactlist", checkNotAuthenticated, (req, res) => {
   });
 });
 
+router.get("/feedback", checkNotAuthenticated, (req, res) => {
+  // pool.query(`SELECT * FROM feedbacks`, (err, results) => {
+  //   if (err) {
+  //     console.log(err);
+  //   }
+  //   // console.log(results.rows);
+  //   res.render("feedback", { data: results.rows });
+  // });
+  console.log("Feed back router called");
+  res.render("feedback");
+});
+
+router.post("/feedback",checkNotAuthenticated, (req, res) => {
+  let { name, email, comment } = req.body;
+  pool.query(
+    `INSERT INTO feedbacks (name, email, comment)
+          VALUES ($1, $2, $3)`,
+    [name, email, comment],
+    (err, results) => {
+      if (err) {
+        throw err;
+      }
+      console.log(results.rows);
+      req.flash("admin: ", "Thanks for giving feedback! We value our customer");
+      res.redirect("/users/feedback");
+    }
+  );
+});
+
 module.exports = router;
