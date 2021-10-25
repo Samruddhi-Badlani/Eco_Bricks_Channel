@@ -1,6 +1,10 @@
 .dashHead{
     display: flex;
-    flex-direction:row ;
+    flex-direction:column ;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;;
 }
 .myProfileImage{
     margin-left: auto;
@@ -12,9 +16,53 @@
 .Head{
     padding:10px;
     margin:10px;
+    display: flex;
+    flex-direction: row;
 }
 .GetInfoForm{
     display: flex;
     width: 400px;;
     flex-direction: column;
+}
+#dashboard-image{
+    width:400px;
+    height:400px;
+
+}
+
+.flex-item-Head{
+    padding: 10px;
+    margin: 10px;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myInputBox{
+    display: flex;
+    flex-direction: row;
+  
+    
+
+}
+.labelFields{
+    padding: 10px;
+    margin:4px;
+    flex: 30%;
+}
+.inputFields{
+    padding: 10px;
+    margin:4px;
+    flex: 70%;
+}
+
+#submitProfile{
+    cursor: pointer;
+    padding: 10px;
+    margin: 4px;
+}
+#submitProfile::hover{
+    background-color: rgb(90, 194, 90);
+    color:white;
+   
 }

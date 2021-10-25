@@ -1,11 +1,8 @@
-const {Pool} = require("pg");
+const { Pool } = require("pg");
+const constring = "postgres://postgres:sanidhya@localhost:5432/ecobrick";
 const pool = new Pool({
-    host:"localhost",
-    port:5432,
-    user:"postgres",
-    password:"root",
-    database:"ecobricks"
-})
+  connectionString: constring,
+});
 pool.connect();
 
 module.exports = pool;

@@ -29,7 +29,6 @@ router.get("/logout", (req, res) => {
 
 router.post("/register", async (req, res) => {
   let { name, email, password, password2 } = req.body;
-  console.log(req.body);
 
   let errors = [];
 
@@ -124,6 +123,7 @@ router.post("/profile", checkNotAuthenticated, (req, res) => {
   console.log(req.body.myUserState);
   console.log(req.body.myUserCountry);
   console.log(req.body.myUserAddress);
+  console.log(req.body.myUserJobRole);
 
   myUser = {
     id: req.body.myUserId,
@@ -143,7 +143,7 @@ router.post("/profile", checkNotAuthenticated, (req, res) => {
 });
 
 router.post("/profileUpdate", checkNotAuthenticated, (req, res) => {
-  console.log("Hurray I did fill form ", req.body.id);
+  console.log("Hurray I did fill form ", req.body.jobRole);
   myUser = {
     id: req.body.id,
     name: req.body.name,
@@ -176,7 +176,6 @@ router.post("/profileUpdate", checkNotAuthenticated, (req, res) => {
       if (err) {
         throw err;
       }
-
       res.render("dashboard", { user: myUser });
     }
   );
