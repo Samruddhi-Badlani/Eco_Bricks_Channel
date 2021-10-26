@@ -24,44 +24,45 @@
         <input type="hidden" name='id' value=<%=user.id %>>
         <div class="myInputBox">
             <label class="labelFields" for="name">Name</label>
-            <input class="inputFields" type="text" name='name' id='name' value=<%=user.name %> required >
+            <input class="inputFields" type="text" name='name' id='name' required value=<%=user.name %>  >
         </div>
         <div class="myInputBox">
             <label class="labelFields" for="email">Email</label>
-            <input class="inputFields" type="email" name='email' id='email' value=<%=user.email %> required >
+            <input class="inputFields" type="email" name='email' id='email' required value=<%=user.email %> >
         </div>
         <div class="myInputBox">
             <label class="labelFields" for="phone">Phone</label>
-            <input class="inputFields" type="text" name='phone' id='phone' value=<%=user.phone %> required >
+           
+            <input class="inputFields" type="tel" name='phone' id='phone' pattern="[+]{1}[0-9]{11,14}"  required value=<%=user.phone %>>
         </div>
 
         <div class="myInputBox">
             <label class="labelFields" for="city">City</label>
-            <input class="inputFields" type="text" name='city' id='city' value=<%=user.city %> required >
+            <input class="inputFields" type="text" name='city' id='city'  required value=<%=user.city %> >
         </div>
         <div class="myInputBox">
             <label class="labelFields" for="state">State</label>
-            <input class="inputFields" type="text" name='state' id='state' value=<%=user.state %> required >
+            <input class="inputFields" type="text" name='state' id='state'  required value=<%=user.state %>>
         </div>
         <div class="myInputBox">
             <label class="labelFields" for="country">Country</label>
-            <input class="inputFields" type="text" name='country' id='country' value=<%=user.country %> required>
+            <input class="inputFields" type="text" name='country' id='country'  required value=<%=user.country %>>
         </div>
         <div class="myInputBox">
             <label class="labelFields" for="address">Address</label>
-            <input class="inputFields" type="text" name='address' id='country' value=<%=user.address %> required>
+            <input class="inputFields" type="text" name='address' id='country'  required value=<%=user.address %>>
         </div>
         <div class="myInputBox">
             <label class="labelFields" for="jobRole">Job Role</label>
-            <input class="inputFields" type="text" name='jobRole' id='jobRole' value=<%=user.jobRole %> required>
+            <input class="inputFields" type="text" name='jobRole' id='jobRole'  required value=<%=user.jobRole %> >
         </div>
         <div class="myInputBox">
             <label class="labelFields" for="cost">Cost</label>
-            <input class="inputFields" type="number" name='cost' id='country' value=<%=user.cost %> required>
+            <input class="inputFields" type="number" name='cost' id='country'  required value=<%=user.cost %> >
         </div>
         <div class="myInputBox">
             <label class="labelFields" for="capacity">Capacity</label>
-            <input class="inputFields" type="number" name='capacity' id='country' value=<%=user.capacity %> required>
+            <input class="inputFields" type="number" name='capacity' id='country'  required value=<%=user.capacity %> >
         </div>
         <input type="submit" value="Save" id="submitProfile">
     </form>
