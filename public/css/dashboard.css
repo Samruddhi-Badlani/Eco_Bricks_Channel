@@ -49,6 +49,7 @@
     padding: 10px;
     margin:4px;
     flex: 30%;
+    color: white;
 }
 .inputFields{
     padding: 10px;
@@ -64,5 +65,8 @@
 #submitProfile::hover{
     background-color: rgb(90, 194, 90);
     color:white;
-   
+}
+a:link
+{
+      color: white;
 }
