@@ -70,17 +70,17 @@
          
         <a href="/users/logout"  class="logHeadItem">Logout</a>
         <form action="/users/profile" method="POST" class="logHeadItem" >
-          <input type="hidden" name='myUserId' value=<%=user.id %>>
-          <input type='hidden' name='myUserName' value = <%= user.name %> >
-          <input type='hidden' name='myUserEmail' value = <%= user.email %> >
-          <input type='hidden' name='myUserPhone' value = <%= user.phone %> >
-          <input type='hidden' name='myUserCity' value = <%= user.city %> >
-          <input type='hidden' name='myUserState' value = <%= user.state %> >
-          <input type='hidden' name='myUserCountry' value = <%= user.country %> > 
-          <input type='hidden' name='myUserAddress' value = <%= user.address %> >
-          <input type='hidden' name='myUserJobRole' value = <%= user.job_role %> >
-          <input type='hidden' name='myUserCost' value = <%= user.cost %> >
-          <input type='hidden' name='myUserCapacity' value = <%= user.capacity %> >
+          <input type="hidden" name='myUserId' value='<%=user.id %>'>
+          <input type='hidden' name='myUserName' value = '<%= user.name %>' >
+          <input type='hidden' name='myUserEmail' value = '<%= user.email %>' >
+          <input type='hidden' name='myUserPhone' value = '<%= user.phone %>' >
+          <input type='hidden' name='myUserCity' value = '<%= user.city %>' >
+          <input type='hidden' name='myUserState' value = '<%= user.state %>' >
+          <input type='hidden' name='myUserCountry' value = '<%= user.country %>' > 
+          <input type='hidden' name='myUserAddress' value='<%= user.address %>' > 
+          <input type='hidden' name='myUserJobRole' value = '<%= user.job_role %>' >
+          <input type='hidden' name='myUserCost' value = '<%= user.cost %>' >
+          <input type='hidden' name='myUserCapacity' value = '<%= user.capacity %>' >
         <input type="image" class="myProfileImage" src="../css/images/profile-img.png" alt="Submit" style="float: right;">
       </form>
     </nav>
