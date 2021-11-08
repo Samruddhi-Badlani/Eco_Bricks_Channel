@@ -215,7 +215,7 @@ router.post("/feedback",checkNotAuthenticated, (req, res) => {
       }
       console.log(results.rows);
       req.flash("admin: ", "Thanks for giving feedback! We value our customer");
-      res.redirect("/users/feedback");
+      res.redirect("/users/dashboard");
     }
   );
 });

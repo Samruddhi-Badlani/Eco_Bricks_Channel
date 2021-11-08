@@ -20,13 +20,14 @@
     </ul>
 
     <ul>
-  
+      <% if(typeof messages != 'undefined') { %>
       <% if(messages.success_msg) { %>
       <li><%= messages.success_msg %></li>
       <% } %>
       <% if(messages.message) { %>
         <li><%= messages.message %></li>
         <% } %>
+      <% } %>
     </ul>
 
     <ul>
