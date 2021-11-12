@@ -70,7 +70,7 @@ pool.query(
       name VARCHAR(255) NOT NULL,
       email VARCHAR(255) NOT NULL,
       phone VARCHAR(255) NOT NULL,
-      address VARCHAR(1000)  NULL,
+      address VARCHAR(1000)  NULL
   )`,
   (err, results) => {
     if (err) {
