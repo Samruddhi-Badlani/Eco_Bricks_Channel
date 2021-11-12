@@ -89,48 +89,32 @@
         <div class="centered">
           <!-- ek chiz -->
           <div class="cardsBox">
+            <% for(var i=0; i < contactlist.length; i++) { %>
             <div class="card" style="width: 18rem">
               <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
               <div class="card-body">
-                <h5 class="card-title">Company x</h5>
+                <h5 class="card-title"><%=contactlist[i].company%></h5>
                 <p class="card-text">Sell eco bricks to us!</p>
-                <a href="#" class="btn btn-primary">Explore more</a>
+                <a href="#" class="btn btn-primary">Interested</a>
               </div>
             </div>
-
-
-            <div class="card" style="width: 18rem">
-              <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Company y</h5>
-                <p class="card-text">Sell eco-bricks to us!</p>
-                <a href="#" class="btn btn-primary">Explore more</a>
-              </div>
-            </div>
+            <% } %>
         </div>
       </div>
    
       <div class="split right">
         <div class="centered">
           <!-- dusri chiz -->
-
+          <% for(var i=0; i < personlist.length; i++) { %>
           <div class="card" style="width: 18rem">
             <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Person A</h5>
+              <h5 class="card-title"><%=personlist[i].name%></h5>
               <p class="card-text">Buy eco-bricks from me!</p>
-              <a href="#" class="btn btn-primary">Explore more</a>
+              <a href="#" class="btn btn-primary">Interested</a>
             </div>
           </div>
-
-          <div class="card" style="width: 18rem">
-            <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Person B</h5>
-              <p class="card-text">Buy eco-bricks from me!</p>
-              <a href="#" class="btn btn-primary">Explore more</a>
-            </div>
-          </div>
+          <% } %>
       </div>
       </div>
     </div>  

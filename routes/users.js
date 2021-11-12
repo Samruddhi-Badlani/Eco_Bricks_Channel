@@ -18,9 +18,13 @@ router.get("/login", checkAuthenticated, (req, res) => {
   res.render("login.ejs");
 });
 
-router.get("/dashboard", checkNotAuthenticated, (req, res) => {
+router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
   console.log(req.isAuthenticated());
-  res.render("dashboard", { user: req.user, my_null_value: req.user.xyz });
+  const contactlist = await pool.query(`SELECT company FROM contactlist`);
+  const personlist = await pool.query(`SELECT name FROM person`);
+  console.log(contactlist.rows);
+  console.log(personlist.rows);
+  res.render("dashboard", { user: req.user, my_null_value: req.user.xyz, contactlist: contactlist.rows, personlist: personlist.rows });
 });
 router.get("/logout", (req, res) => {
   req.logout();
@@ -29,7 +33,9 @@ router.get("/logout", (req, res) => {
 
 router.post("/register", async (req, res) => {
   let { name, email, password, password2 } = req.body;
-
+  console.log("working ")
+  console.log(req.body);
+  console.log(req.params)
   let errors = [];
 
   console.log({
@@ -203,7 +209,7 @@ router.get("/feedback", checkNotAuthenticated, (req, res) => {
   res.render("feedback");
 });
 
-router.post("/feedback",checkNotAuthenticated, (req, res) => {
+router.post("/feedback", checkNotAuthenticated, (req, res) => {
   let { name, email, comment } = req.body;
   pool.query(
     `INSERT INTO feedbacks (name, email, comment)
