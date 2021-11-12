@@ -1,5 +1,6 @@
 const pool = require("../db");
 
+/*THIS IS COMPANY LIST*/
 /* RUN THIS SCRIPT FOR GENERATING CONTACTLIST TABLE */
 
 const obj = [
