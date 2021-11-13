@@ -83,7 +83,18 @@
           <input type='hidden' name='myUserCapacity' value = '<%= user.capacity %>' >
         <input type="image" class="myProfileImage" src="../css/images/profile-img.png" alt="Submit" style="float: right;">
       </form>
+      <ul>
+        <% if(typeof messages != 'undefined') { %>
+        <% if(messages.success_msg) { %>
+        <li><%= messages.success_msg %></li>
+        <% } %>
+        <% if(messages.message) { %>
+          <li><%= messages.message %></li>
+          <% } %>
+        <% } %>
+      </ul>
     </nav>
+    
     <div class="split_outer">
       <div class="split left">
         <div class="centered">
@@ -95,7 +106,7 @@
               <div class="card-body">
                 <h5 class="card-title"><%=contactlist[i].company%></h5>
                 <p class="card-text">Sell eco bricks to us!</p>
-                <a href="#" class="btn btn-primary">Interested</a>
+                <a href="/users/sellform?id=<%=contactlist[i].id%>" class="btn btn-primary">Interested</a>
               </div>
             </div>
             <% } %>
@@ -111,7 +122,7 @@
             <div class="card-body">
               <h5 class="card-title"><%=personlist[i].name%></h5>
               <p class="card-text">Buy eco-bricks from me!</p>
-              <a href="#" class="btn btn-primary">Interested</a>
+              <a href="/users/buyform?id=<%=personlist[i].id%>" class="btn btn-primary">Interested</a>
             </div>
           </div>
           <% } %>
