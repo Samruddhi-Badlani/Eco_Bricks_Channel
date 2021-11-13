@@ -12,6 +12,10 @@
   </head>
   <body>
     <h1>Intersted persons submitted form</h1>
+
+    <% if(data.length <=0) {%>
+      <h4>You do not have any Notifications and no forms received yet!!</h4>
+    <% } %>
     <br/>
     <% if(user.job_role == "company") {%>
     <% for(var i=0; i < data.length; i++) { %>
@@ -42,7 +46,9 @@
             <div class="card-body">
               <h5 class="card-title"><%=data[i].ques1%> pieces of ecobricks want to buy at an amazing price of ₹<%=data[i].ques2%></h5>
               <p class="card-text">Available at <%=data[i].mob%> and <%=data[i].email%></p>
-              <a href="#" class="btn btn-primary">I am done with it</a>
+              <form action="/users/notification?id=<%=data[i].id%>" method="post">
+                <button type="submit" class="btn btn-primary">I am done with it</button>
+            </form>
             </div>
             <div class="card-footer text-muted">
               Today
