@@ -6,8 +6,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@1&display=swap" rel="stylesheet">
 
-
-   
+    <!-- Fontawesome icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -83,6 +83,8 @@
           <input type='hidden' name='myUserCapacity' value = '<%= user.capacity %>' >
         <input type="image" class="myProfileImage" src="../css/images/profile-img.png" alt="Submit" style="float: right;">
       </form>
+      <div><a href="/users/notification" style="color: black;"><i class="fa fa-bell " style="font-size: 28px;" aria-hidden="true"></i></a></div>
+    </div>
       <ul>
         <% if(typeof messages != 'undefined') { %>
         <% if(messages.success_msg) { %>
