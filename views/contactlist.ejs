@@ -22,33 +22,41 @@
   </head>
   <body style="color:white;">
     <div class="container">
-      <h1>Contact List Of Ecobrick Collectors</h1>
+      <h1>Contact List Of Collectors and Providers</h1>
       <table class="table table-striped">
         <thead>
           <tr>
             <th scope="col">#</th>
+            <th scope="col">jobRole</th>
             <th scope="col">name</th>
             <th scope="col">company</th>
             <th scope="col">email</th>
-            <th scope="col">gender</th>
+            <th scope="col">city</th>
+            <th scope="col">state</th>
+            <th scope="col">country</th>
             <th scope="col">phone</th>
             <th scope="col">address</th>
             <th scope="col">registered</th>
-            <th scope="col">about</th>
+            <th scope="col">cost</th>
+            <th scope="col">capacity</th>
           </tr>
         </thead>
         <tbody>
           <% for(var i=0; i < data.length; i++) { %>
           <tr>
             <th scope="row">i</th>
+            <td><%= data[i].job_role %></td>
             <td><%= data[i].name %></td>
             <td><%= data[i].company %></td>
             <td><%= data[i].email %></td>
-            <td><%= data[i].gender %></td>
+            <td><%= data[i].city %></td>
+            <td><%= data[i].state %></td>
+            <td><%= data[i].country %></td>
             <td><%= data[i].phone %></td>
             <td><%= data[i].address %></td>
             <td><%= data[i].registered %></td>
-            <td><%= data[i].about %></td>
+            <td><%= data[i].cost %></td>
+            <td><%= data[i].capacity %></td>
           </tr>
           <% } %>
         </tbody>
