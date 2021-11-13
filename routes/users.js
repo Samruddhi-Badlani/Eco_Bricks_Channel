@@ -275,4 +275,20 @@ router.post("/sellform", checkNotAuthenticated, (req, res) => {
 
 });
 
+router.get("/notification", checkNotAuthenticated, async (req, res) => {
+  console.log("notification form router called");
+  const data = await pool.query(`SELECT * FROM form where userid = ${req.user.id}`);
+
+  res.render("notification", { user: req.user, data: data.rows });
+});
+
+// its a delete request 
+router.post("/notification", checkNotAuthenticated, async (req, res) => {
+  console.log("notification post")
+  const data = await pool.query(`DELETE FROM form WHERE id=${req.query.id}`);
+  req.flash("success_msg", "Thanks for notifying him");
+  res.redirect("/users/dashboard");
+});
+
+
 module.exports = router;
