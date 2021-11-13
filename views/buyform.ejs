@@ -28,14 +28,14 @@
                         </div>
                         
                         <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Business email<span class="text-danger"> *</span></label> <input type="text" id="email" name="email" placeholder="" onblur="validate(3)"> </div>
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Phone number<span class="text-danger"> *</span></label> <input type="text" id="mob" name="mob" placeholder="" onblur="validate(4)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Business email<span class="text-danger"> *</span></label> <input type="email" id="email" name="email" placeholder="" onblur="validate(3)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Phone number<span class="text-danger"> *</span></label> <input type="tel" id="mob" name="mob" placeholder="" onblur="validate(4)"> </div>
                         </div>
                         <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">How many ecobricks ready to buy?<span class="text-danger"> *</span></label> <input type="text" id="ques1" name="ques1" placeholder="" onblur="validate(5)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">How many ecobricks ready to buy?<span class="text-danger"> *</span></label> <input type="number" id="ques1" name="ques1" placeholder="" onblur="validate(5)" min="1"> </div>
                         </div>
                         <div class="row justify-content-between text-left">
-                            <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">What is your prefered price to buy ecobrick?<span class="text-danger"> *</span></label> <input type="text" id="ques2" name="ques2" placeholder="" onblur="validate(6)"> </div>
+                            <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">What is your prefered price to buy ecobrick?<span class="text-danger"> *</span></label> <input type="number" id="ques2" name="ques2" placeholder="" onblur="validate(6)" min="1"> </div>
                         </div>
                         <div class="row justify-content-end">
                             <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Drop a message</button> </div>
