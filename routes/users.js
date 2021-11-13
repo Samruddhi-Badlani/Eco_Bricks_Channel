@@ -20,10 +20,8 @@ router.get("/login", checkAuthenticated, (req, res) => {
 
 router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
   console.log(req.isAuthenticated());
-  const contactlist = await pool.query(`SELECT company FROM contactlist`);
-  const personlist = await pool.query(`SELECT name FROM person`);
-  console.log(contactlist.rows);
-  console.log(personlist.rows);
+  const contactlist = await pool.query(`SELECT company, id FROM users where job_role = 'company' `);
+  const personlist = await pool.query(`SELECT name, id FROM users where job_role = 'individual' `);
   res.render("dashboard", { user: req.user, my_null_value: req.user.xyz, contactlist: contactlist.rows, personlist: personlist.rows });
 });
 router.get("/logout", (req, res) => {
@@ -32,7 +30,7 @@ router.get("/logout", (req, res) => {
 });
 
 router.post("/register", async (req, res) => {
-  let { name, email, password, password2 } = req.body;
+  let { name, email, password, password2, role, companyname, registered, phone, city, state, country, address, cost, capacity } = req.body;
   console.log("working ")
   console.log(req.body);
   console.log(req.params)
@@ -43,9 +41,11 @@ router.post("/register", async (req, res) => {
     email,
     password,
     password2,
+    role,
+    companyname, registered, phone, city, state, country, address, cost, capacity
   });
 
-  if (!name || !email || !password || !password2) {
+  if (!name || !email || !password || !password2 || !role || !companyname) {
     errors.push({ message: "Please enter all fields" });
   }
 
@@ -79,15 +79,16 @@ router.post("/register", async (req, res) => {
           return res.render("register", { errors });
         } else {
           pool.query(
-            `INSERT INTO users (name, email, password)
-                  VALUES ($1, $2, $3)
+            `INSERT INTO users (name, email, password,job_role,company,registered,phone,city,state,country,address,cost,capacity)
+                  VALUES ($1, $2, $3, $4,$5,$6,$7,$8,$9,$10,$11,$12,$13)
                   RETURNING id, password`,
-            [name, email, hashedPassword],
+            [name, email, hashedPassword, role, companyname, registered, phone, city, state, country, address, cost, capacity],
             (err, results) => {
               if (err) {
                 throw err;
               }
               console.log(results.rows);
+
               req.flash("success_msg", "You are now registered. Please log in");
               res.redirect("/users/login");
             }
@@ -188,7 +189,7 @@ router.post("/profileUpdate", checkNotAuthenticated, (req, res) => {
 });
 
 router.get("/contactlist", checkNotAuthenticated, (req, res) => {
-  pool.query(`SELECT * FROM contactlist`, (err, results) => {
+  pool.query(`SELECT * FROM users`, (err, results) => {
     if (err) {
       console.log(err);
     }
@@ -224,6 +225,54 @@ router.post("/feedback", checkNotAuthenticated, (req, res) => {
       res.redirect("/users/dashboard");
     }
   );
+});
+
+router.get("/buyform", checkNotAuthenticated, (req, res) => {
+  console.log("buy form router called");
+  res.render("buyform", { id: req.query.id });
+});
+router.post("/buyform", checkNotAuthenticated, (req, res) => {
+  let { userid, fname, lname, email, mob, ques1, ques2 } = req.body;
+  let user_id = parseInt(userid, 10);
+  pool.query(
+    `INSERT INTO form (userid, fname, lname, email, mob, ques1, ques2)
+          VALUES ($1, $2, $3, $4,$5,$6,$7)`,
+    [user_id, fname, lname, email, mob, ques1, ques2],
+    (err, results) => {
+      if (err) {
+        throw err;
+      }
+      console.log(results.rows);
+
+      req.flash("success_msg", "Thanks for showing interest, Responsible person will get back to you");
+      res.redirect("/users/dashboard");
+    }
+  );
+
+});
+
+router.get("/sellform", checkNotAuthenticated, (req, res) => {
+  console.log("sell form router called");
+  res.render("sellform", { id: req.query.id });
+});
+router.post("/sellform", checkNotAuthenticated, (req, res) => {
+  let { userid, fname, lname, email, mob, ques1, ques2 } = req.body;
+  let user_id = parseInt(userid, 10);
+  pool.query(
+    `INSERT INTO form (userid, fname, lname, email, mob, ques1, ques2)
+          VALUES ($1, $2, $3, $4,$5,$6,$7)`,
+    [user_id, fname, lname, email, mob, ques1, ques2],
+    (err, results) => {
+      if (err) {
+        throw err;
+      }
+      console.log(results.rows);
+
+      req.flash("success_msg", "Thanks for showing interest, Responsible person will get back to you");
+      res.redirect("/users/dashboard");
+    }
+  );
+
 });
 
 module.exports = router;
