@@ -82,7 +82,7 @@
           <input type='hidden' name='myUserJobRole' value = '<%= user.job_role %>' >
           <input type='hidden' name='myUserCost' value = '<%= user.cost %>' >
           <input type='hidden' name='myUserCapacity' value = '<%= user.capacity %>' >
-        <input type="image" class="myProfileImage" src="../css/images/profile-img.png" alt="Submit" style="float: right;">
+        <input type="image" class="myProfileImage" src="../css/images/user_profile.png" alt="Submit" style="float: right;">
       </form>
       <div><a href="/users/notification" class="notification" style="color: black;"><i class="fa fa-bell " style="font-size: 28px;" aria-hidden="true"></i>
         <% if( notificationNumber != 0) { %>
@@ -107,8 +107,8 @@
           <!-- ek chiz -->
           <div class="cardsBox">
             <% for(var i=0; i < contactlist.length; i++) { %>
-            <div class="card" style="width: 18rem">
-              <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
+            <div class="card welcome" style="width: 18rem">
+              <img src="../css/images/company_icon.jpg" class="card-img-top" alt="..." />
               <div class="card-body">
                 <h5 class="card-title"><%=contactlist[i].company%></h5>
                 <p class="card-text">Sell eco bricks to us!</p>
@@ -117,12 +117,12 @@
             </div>
             <% } %>
             <% for(var i=0; i < personlist.length; i++) { %>
-              <div class="card" style="width: 18rem">
-                <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
+              <div class="card welcome" style="width: 18rem">
+                <img src="../css/images/individual_icon.jpg" class="card-img-top" alt="..." />
                 <div class="card-body">
                   <h5 class="card-title"><%=personlist[i].name%></h5>
                   <p class="card-text">Buy eco-bricks from me!</p>
-                  <a href="/users/buyform?id=<%=personlist[i].id%>" class="btn btn-primary">Interested</a>
+                  <a href="/users/buyform?id=<%=personlist[i].id%>" class="btn btn-primary ">Interested</a>
                 </div>
               </div>
               <% } %>

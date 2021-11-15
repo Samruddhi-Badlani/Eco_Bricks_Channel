@@ -21,12 +21,12 @@
     <title>Contact list</title>
   </head>
   <body style="color:white;">
-    <div class="container">
-      <h1>Contact List Of Collectors and Providers</h1>
-      <table class="table table-striped">
+    <div class="container"><br>
+      <h1 class="text-center" >Contact List Of Collectors and Providers</h1><br>
+      <table class="table table-striped table-hover ">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <!-- <th scope="col">#</th> -->
             <th scope="col">jobRole</th>
             <th scope="col">name</th>
             <th scope="col">company</th>
@@ -44,19 +44,19 @@
         <tbody>
           <% for(var i=0; i < data.length; i++) { %>
           <tr>
-            <th scope="row">i</th>
-            <td><%= data[i].job_role %></td>
-            <td><%= data[i].name %></td>
-            <td><%= data[i].company %></td>
-            <td><%= data[i].email %></td>
-            <td><%= data[i].city %></td>
-            <td><%= data[i].state %></td>
-            <td><%= data[i].country %></td>
-            <td><%= data[i].phone %></td>
-            <td><%= data[i].address %></td>
-            <td><%= data[i].registered %></td>
-            <td><%= data[i].cost %></td>
-            <td><%= data[i].capacity %></td>
+            <!-- <th scope="row">*</th> -->
+            <td ><%= data[i].job_role %></td>
+            <td ><%= data[i].name %></td>
+            <td ><%= data[i].company %></td>
+            <td style ="word-break:break-word;"><%= data[i].email %></td>
+            <td style ="word-break:break-word;"><%= data[i].city %></td>
+            <td style ="word-break:break-word;"><%= data[i].state %></td>
+            <td style ="word-break:break-word;"><%= data[i].country %></td>
+            <td style ="word-break:break-word;"><%= data[i].phone %></td>
+            <td style ="word-break:break-word;"><%= data[i].address %></td>
+            <td style ="word-break:break-word;"><%= data[i].registered %></td>
+            <td style ="word-break:break-word;"><%= data[i].cost %></td>
+            <td style ="word-break:break-word;"><%= data[i].capacity %></td>
           </tr>
           <% } %>
         </tbody>

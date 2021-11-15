@@ -1,10 +1,10 @@
 *
 {
-    font-family: 'IM Fell DW Pica', serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-image: url("images/green-c.jpg");
+    background-image: url("images/brown_background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -67,7 +67,7 @@ a.logHeadItem:hover {
 
   .Head
   {
-      color: white;
+      /* color: white; */
   }
 
   .notification {
