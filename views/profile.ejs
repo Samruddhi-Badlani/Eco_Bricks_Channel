@@ -6,70 +6,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/ecobrick-profile.css">
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@1&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <a href="/users/dashboard" style="color:white;" >Go Back to dashboard</a>
-    <div class="Head">
+    <!-- <a href="/users/dashboard" style="color:white;" >Go Back to dashboard</a> -->
+
+    <!-- <div class="Head">
         <div class="flex-item-Head"> <img src="../css/images/profile-img.png" alt="" width="40px" height="40px"></div>
         <div class="flex-item-Head"><span>
                 <%= user.name %>
             </span></div>
-    </div>
+    </div> -->
     <form action="/users/profileUpdate" method="POST" class="GetInfoForm">
-
+        <div class="Head">
+            <div class="flex-item-Head"> <img src="../css/images/user_profile.png" alt="" width="40px" height="40px"></div>
+            <div class="flex-item-Head"><span>
+                   <h4><%= user.name %></h4> 
+                </span></div>
+        </div>
         <input type="hidden" name='id' value=<%=user.id %>>
         <div class="myInputBox">
             <label class="labelFields" for="name">Name</label>
-            <input class="inputFields" type="text" name='name' id='name' required value='<%=user.name %>'  >
+            <input class="inputFields form-control" type="text" name='name' id='name' required value='<%=user.name %>'  >
         </div>
         <div class="myInputBox">
             <label class="labelFields" for="email">Email</label>
-            <input class="inputFields" type="email" name='email' id='email' required value='<%=user.email %>'  >
+            <input class="inputFields form-control" type="email" name='email' id='email' required value='<%=user.email %>'  >
         </div>
         <div class="myInputBox">
             <label class="labelFields" for="phone">Phone</label>
            
-            <input class="inputFields" type="tel" name='phone' id='phone' pattern="[+]{1}[0-9]{11,14}"  required value='<%=user.phone %>'>
+            <input class="inputFields form-control" type="tel" name='phone' id='phone' pattern="[+]{1}[0-9]{11,14}"  required value='<%=user.phone %>'>
         </div>
 
         <div class="myInputBox">
             <label class="labelFields" for="city">City</label>
-            <input class="inputFields" type="text" name='city' id='city'  required value='<%=user.city %>' >
+            <input class="inputFields form-control" type="text" name='city' id='city'  required value='<%=user.city %>' >
         </div>
         <div class="myInputBox">
             <label class="labelFields" for="state">State</label>
-            <input class="inputFields" type="text" name='state' id='state'  required value='<%=user.state %>'>
+            <input class="inputFields form-control" type="text" name='state' id='state'  required value='<%=user.state %>'>
         </div>
         <div class="myInputBox">
             <label class="labelFields" for="country">Country</label>
-            <input class="inputFields" type="text" name='country' id='country'  required value='<%=user.country %>'>
+            <input class="inputFields form-control" type="text" name='country' id='country'  required value='<%=user.country %>'>
         </div>
         <div class="myInputBox">
             <label class="labelFields" for="address">Address</label>
-            <input class="inputFields" type="text" name='address' id='country' value='<%=user.address %>' required >
+            <input class="inputFields form-control" type="text" name='address' id='country' value='<%=user.address %>' required >
         </div>
         <div class="myInputBox">
             <label class="labelFields" for="jobRole">Job Role</label>
-            <input class="inputFields" type="text" name='jobRole' id='jobRole'  required value='<%=user.jobRole %>' >
+            <input class="inputFields form-control" type="text" name='jobRole' id='jobRole'  required value='<%=user.jobRole %>' >
         </div>
         <div class="myInputBox">
             <label class="labelFields" for="cost">Cost</label>
-            <input class="inputFields" type="number" name='cost' id='country'  required value='<%=user.cost %>' >
+            <input class="inputFields form-control" type="number" name='cost' id='country'  required value='<%=user.cost %>' >
         </div>
         <div class="myInputBox">
             <label class="labelFields" for="capacity">Capacity</label>
-            <input class="inputFields" type="number" name='capacity' id='country'  required value='<%=user.capacity %>' >
+            <input class="inputFields form-control" type="number" name='capacity' id='country'  required value='<%=user.capacity %>' >
         </div>
-        <input type="submit" value="Save" id="submitProfile">
+        <input type="submit" value="Save" id="submitProfile" class="btn btn-success">
+        <a href="/users/feedback" style="text-align: center;">Give feedback</a>
     </form>
-
-    <form action="/users/feedback" method="GET">
+    <!-- <form action="/users/feedback" method="GET">
+            
         <input type="submit" value="Give feedback">
-    </form>
+    </form>   -->
+    
     <div id="Info">
 
 
