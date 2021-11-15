@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/notification.css">
 
     <title>Notifications</title>
   </head>
@@ -26,7 +27,7 @@
             <div class="card-body">
               <h5 class="card-title"><%=data[i].ques1%> pieces of ecobricks are ready to sell at price of just ₹<%=data[i].ques2%></h5>
               <p class="card-text">Available at <%=data[i].mob%> and <%=data[i].email%></p>
-              <form action="/users/notification?id=<%=data[i].id%>" method="post">
+              <form action="/users/notification_transaction?id=<%=data[i].id%>" method="post">
                 <button type="submit" class="btn btn-primary">I am done with it</button>
             </form>
               <!-- <a href="/users/notification" class="btn btn-primary">I am done with it</a> -->
@@ -46,7 +47,7 @@
             <div class="card-body">
               <h5 class="card-title"><%=data[i].ques1%> pieces of ecobricks want to buy at an amazing price of ₹<%=data[i].ques2%></h5>
               <p class="card-text">Available at <%=data[i].mob%> and <%=data[i].email%></p>
-              <form action="/users/notification?id=<%=data[i].id%>" method="post">
+              <form action="/users/notification_transaction?id=<%=data[i].id%>" method="post">
                 <button type="submit" class="btn btn-primary">I am done with it</button>
             </form>
             </div>
@@ -56,6 +57,26 @@
           </div>
           <% } %>
           <% } %>
+          <div class="queries">
+            <h1>Queries</h1>
+          <% for(var i=0; i < queries.length; i++) { %>
+            <div class="card text-center">
+                <div class="card-header">
+                  <%=queries[i].fname%> <%=queries[i].lname%>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"> Query related to <%=queries[i].ques1%></h5>
+                  <p class="card-text"><%=queries[i].ques2%></p>
+                  <form action="/users/notification_query?id=<%=queries[i].id%>" method="post">
+                    <button type="submit" class="btn btn-primary">I am done with it</button>
+                </form>
+                </div>
+                <div class="card-footer text-muted">
+                  Today
+                </div>
+              </div>
+              <% } %>
+            </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

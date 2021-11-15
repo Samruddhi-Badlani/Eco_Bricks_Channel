@@ -1,0 +1,8 @@
+.queries{
+    display: flex;
+    flex-direction: column;
+    margin:20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}

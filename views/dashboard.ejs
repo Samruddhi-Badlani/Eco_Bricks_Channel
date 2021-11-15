@@ -114,6 +114,7 @@
                 <p class="card-text">Sell eco bricks to us! at a price of <%=contactlist[i].cost%></p>
                 <p class="card-text">Location <%=contactlist[i].city%>,<%=contactlist[i].state%>,<%=contactlist[i].country%></p>
                 <a href="/users/sellform?id=<%=contactlist[i].id%>" class="btn btn-primary">Interested</a>
+                <a href="/users/queryform?id=<%=contactlist[i].id%>" class="btn btn-primary">Submit a query</a>
               </div>
             </div>
             <% } %>
@@ -125,6 +126,7 @@
                   <p class="card-text">Buy eco-bricks from me! at a price of <%=personlist[i].cost%></p>
                   <p class="card-text">Location <%=personlist[i].city%>,<%=personlist[i].state%>,<%=personlist[i].country%></p>
                   <a href="/users/buyform?id=<%=personlist[i].id%>" class="btn btn-primary">Interested</a>
+                  <a href="/users/queryform?id=<%=personlist[i].id%>" class="btn btn-primary">Submit a query</a>
                 </div>
               </div>
               <% } %>

@@ -21,6 +21,7 @@ router.get("/login", checkAuthenticated, (req, res) => {
 router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
   console.log(req.isAuthenticated());
   const data = await pool.query(`SELECT * FROM form where userid = ${req.user.id}`);
+  const data2 = await pool.query(`SELECT * FROM queryform where userid = ${req.user.id}`);
   const contactlist = await pool.query(`SELECT * FROM users where job_role = 'company' `);
   var personlist = await pool.query(`SELECT * FROM users where job_role = 'individual' `);
   if(req.user.job_role == 'individual'){
@@ -31,7 +32,7 @@ router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
     contactlist.rows.length = 0;
     console.log("User is a company")
   }
-  res.render("dashboard", { user: req.user, my_null_value: req.user.xyz, contactlist: contactlist.rows, personlist: personlist.rows,notificationNumber : data.rows.length });
+  res.render("dashboard", { user: req.user, my_null_value: req.user.xyz, contactlist: contactlist.rows, personlist: personlist.rows,notificationNumber : data.rows.length + data2.rows.length });
 });
 router.get("/logout", (req, res) => {
   req.logout();
@@ -286,15 +287,23 @@ router.post("/sellform", checkNotAuthenticated, (req, res) => {
 
 router.get("/notification", checkNotAuthenticated, async (req, res) => {
   console.log("notification form router called");
+  const myQueries = await pool.query(`SELECT * FROM queryform where userid = ${req.user.id}`)
   const data = await pool.query(`SELECT * FROM form where userid = ${req.user.id}`);
 
-  res.render("notification", { user: req.user, data: data.rows });
+  res.render("notification", { user: req.user, data: data.rows, queries : myQueries.rows  });
 });
 
 // its a delete request 
-router.post("/notification", checkNotAuthenticated, async (req, res) => {
+router.post("/notification_transaction", checkNotAuthenticated, async (req, res) => {
   console.log("notification post")
   const data = await pool.query(`DELETE FROM form WHERE id=${req.query.id}`);
+  req.flash("success_msg", "Thanks for notifying him");
+  res.redirect("/users/dashboard");
+});
+// its a delete query
+router.post("/notification_query", checkNotAuthenticated, async (req, res) => {
+  console.log("notification post")
+  const data = await pool.query(`DELETE FROM queryform WHERE id=${req.query.id}`);
   req.flash("success_msg", "Thanks for notifying him");
   res.redirect("/users/dashboard");
 });
@@ -320,5 +329,28 @@ router.post("/search",checkNotAuthenticated,async (req, res) =>{
   
   
   res.render("dashboard", { user: req.user, my_null_value: req.user.xyz, contactlist: contactlist.rows, personlist: personlist.rows,notificationNumber : data.rows.length });
+});
+router.get("/queryform", checkNotAuthenticated, (req, res) => {
+  console.log("query form router called");
+  res.render("queryform", { id: req.query.id });
+});
+router.post("/queryform", checkNotAuthenticated, (req, res) => {
+  let { userid, fname, lname, email, mob, ques1, ques2 } = req.body;
+  let user_id = parseInt(userid, 10);
+  pool.query(
+    `INSERT INTO queryform (userid, fname, lname, email, mob, ques1, ques2)
+          VALUES ($1, $2, $3, $4,$5,$6,$7)`,
+    [user_id, fname, lname, email, mob, ques1, ques2],
+    (err, results) => {
+      if (err) {
+        throw err;
+      }
+      console.log(results.rows);
+
+      req.flash("success_msg", "Your query has been submitted , Responsible person will get back to you");
+      res.redirect("/users/dashboard");
+    }
+  );
+
 });
 module.exports = router;
