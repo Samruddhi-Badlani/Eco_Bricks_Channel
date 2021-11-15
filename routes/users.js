@@ -20,7 +20,7 @@ router.get("/login", checkAuthenticated, (req, res) => {
 
 router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
   console.log(req.isAuthenticated());
-  
+  const data = await pool.query(`SELECT * FROM form where userid = ${req.user.id}`);
   const contactlist = await pool.query(`SELECT company, id FROM users where job_role = 'company' `);
   var personlist = await pool.query(`SELECT name, id FROM users where job_role = 'individual' `);
   if(req.user.job_role == 'individual'){
@@ -31,7 +31,7 @@ router.get("/dashboard", checkNotAuthenticated, async (req, res) => {
     contactlist.rows.length = 0;
     console.log("User is a company")
   }
-  res.render("dashboard", { user: req.user, my_null_value: req.user.xyz, contactlist: contactlist.rows, personlist: personlist.rows });
+  res.render("dashboard", { user: req.user, my_null_value: req.user.xyz, contactlist: contactlist.rows, personlist: personlist.rows,notificationNumber : data.rows.length });
 });
 router.get("/logout", (req, res) => {
   req.logout();

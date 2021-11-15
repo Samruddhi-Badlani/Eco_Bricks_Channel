@@ -83,7 +83,12 @@
           <input type='hidden' name='myUserCapacity' value = '<%= user.capacity %>' >
         <input type="image" class="myProfileImage" src="../css/images/profile-img.png" alt="Submit" style="float: right;">
       </form>
-      <div><a href="/users/notification" style="color: black;"><i class="fa fa-bell " style="font-size: 28px;" aria-hidden="true"></i></a></div>
+      <div><a href="/users/notification" class="notification" style="color: black;"><i class="fa fa-bell " style="font-size: 28px;" aria-hidden="true"></i>
+        <% if( notificationNumber != 0) { %>
+          
+        <span class="badge"><%= notificationNumber %></span>
+        <% } %>
+      </a></div>
     </div>
       <ul>
         <% if(typeof messages != 'undefined') { %>
