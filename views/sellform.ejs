@@ -29,7 +29,7 @@
                         
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Business email<span class="text-danger"> *</span></label> <input type="email" id="email" name="email" placeholder="" onblur="validate(3)" required> </div>
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Phone number<span class="text-danger"> *</span></label> <input type="tel" id="mob" name="mob" placeholder="" onblur="validate(4)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Phone number<span class="text-danger"> *</span></label> <input type="tel" id="mob" name="mob" placeholder="" onblur="validate(4)" pattern="[+]{1}[0-9]{11,14}" > </div>
                         </div>
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">How many ecobricks ready to sell?<span class="text-danger"> *</span></label> <input type="number" id="ques1" name="ques1" placeholder="" onblur="validate(5)" min="1" required> </div>
