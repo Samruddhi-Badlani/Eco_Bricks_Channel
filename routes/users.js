@@ -183,7 +183,7 @@ router.post("/profileUpdate", checkNotAuthenticated, (req, res) => {
       if (err) {
         throw err;
       }
-      res.render("dashboard", { user: myUser });
+      res.redirect("/users/dashboard");
     }
   );
 });
