@@ -41,7 +41,7 @@ a.logHeadItem:hover {
 .card{
     padding: 10px;
     margin:4px;
-    height:330px;
+    height:auto;
     width:300px;
 }
 /* Split the screen in half */
