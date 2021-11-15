@@ -50,16 +50,7 @@ a.logHeadItem:hover {
     position: fixed;
 }
   /* Split the screen in half */
-.split {
-    width: 50%;
-    height : 80%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    overflow-x: hidden;
-    padding-top: 100px;
-    margin-top: 80px;
-  }
+
   
   /* Control the left side */
   .left {
@@ -73,15 +64,7 @@ a.logHeadItem:hover {
     background-color:#3E7C17; 
   }
   
-  /* If you want the content centered horizontally and vertically */
-  .centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    margin-top: 100px ;
-  }
+
   .Head
   {
       color: white;

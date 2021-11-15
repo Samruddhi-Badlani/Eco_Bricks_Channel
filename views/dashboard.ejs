@@ -97,9 +97,7 @@
       </ul>
     </nav>
     
-    <div class="split_outer">
-      <div class="split left">
-        <div class="centered">
+        
           <!-- ek chiz -->
           <div class="cardsBox">
             <% for(var i=0; i < contactlist.length; i++) { %>
@@ -112,13 +110,22 @@
               </div>
             </div>
             <% } %>
-        </div>
-      </div>
+            <% for(var i=0; i < personlist.length; i++) { %>
+              <div class="card" style="width: 18rem">
+                <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title"><%=personlist[i].name%></h5>
+                  <p class="card-text">Buy eco-bricks from me!</p>
+                  <a href="/users/buyform?id=<%=personlist[i].id%>" class="btn btn-primary">Interested</a>
+                </div>
+              </div>
+              <% } %>
+      
    
-      <div class="split right">
-        <div class="centered">
+      <!-- <div class="split right">
+        <div class="centered"> -->
           <!-- dusri chiz -->
-          <% for(var i=0; i < personlist.length; i++) { %>
+          <!-- <% for(var i=0; i < personlist.length; i++) { %>
           <div class="card" style="width: 18rem">
             <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
             <div class="card-body">
@@ -128,8 +135,8 @@
             </div>
           </div>
           <% } %>
+      </div> -->
       </div>
-      </div>
-    </div>  
+  
   </body>
 </html>
