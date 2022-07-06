@@ -1,8 +1,15 @@
-const { Pool } = require("pg");
-const constring = "postgres://postgres:root@localhost:5432/ecobricks";
-const pool = new Pool({
-  connectionString: constring,
-});
-pool.connect();
+const { Pool } = require('pg')
 
-module.exports = pool;
+const pool = new Pool({
+  user: 'ecobricks',
+  host: 'localhost',
+  database: 'ecobricks',
+  port: 5432,
+  password: 'ecobricks',
+})
+
+module.exports = {
+  query: (queryText, params, callback) => {
+    return pool.query(queryText, params, callback)
+  },
+}

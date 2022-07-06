@@ -23,73 +23,74 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-    
-     
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarTogglerDemo03"
-          aria-controls="navbarTogglerDemo03"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">Eco-brick</a>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">FAQs</a>
-            </li>
-          </ul>
-          <form method= "POST" action="/users/search" class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              name="searchByName"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
-        <div id="logHead">
-        <a href="/users/contactlist"  class="logHeadItem">contact list</a>
+      <a class="navbar-brand" href="/">Ecobrick Channel</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link"  href="/users/contactlist"><button type="button" class="btn btn-primary">Contacts</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/logout"><button type="button" class="btn btn-primary">Log-out</button></a>
+          </li>
+        
+
+          <li class="nav-item">
+            <form  action="/users/profile" method="POST"  >
+              <input type="hidden" name='myUserId' value='<%=user.id %>'>
+              <input type='hidden' name='myUserName' value = '<%= user.name %>' >
+              <input type='hidden' name='myUserEmail' value = '<%= user.email %>' >
+              <input type='hidden' name='myUserPhone' value = '<%= user.phone %>' >
+              <input type='hidden' name='myUserCity' value = '<%= user.city %>' >
+              <input type='hidden' name='myUserState' value = '<%= user.state %>' >
+              <input type='hidden' name='myUserCountry' value = '<%= user.country %>' > 
+              <input type='hidden' name='myUserAddress' value='<%= user.address %>' > 
+              <input type='hidden' name='myUserJobRole' value = '<%= user.job_role %>' >
+              <input type='hidden' name='myUserCost' value = '<%= user.cost %>' >
+              <input type='hidden' name='myUserCapacity' value = '<%= user.capacity %>' >
+              <li class="nav-item">
+                <a class="nav-link"> <button type="submit" class="btn btn-primary">Profile</button></a>
+              </li>
+            </form>
+       
+          </li>
+
+              <li class="nav-item">
+                <a  class="nav-link" href="/users/notification" class="notification" style="color: black;"><i class="fa fa-bell " style="font-size: 28px;" aria-hidden="true"></i>
+                  <% if( notificationNumber != 0) { %>
+                    
+                  <span class="badge"><%= notificationNumber %></span>
+                  <% } %>
+                </a>
+              </li>
+             
+        
+         
+           
+          
+        </ul>
+      </div>
+    </nav>
+    
+
+    
        
          
-        <a href="/users/logout"  class="logHeadItem">Logout</a>
-        <form action="/users/profile" method="POST" class="logHeadItem" >
-          <input type="hidden" name='myUserId' value='<%=user.id %>'>
-          <input type='hidden' name='myUserName' value = '<%= user.name %>' >
-          <input type='hidden' name='myUserEmail' value = '<%= user.email %>' >
-          <input type='hidden' name='myUserPhone' value = '<%= user.phone %>' >
-          <input type='hidden' name='myUserCity' value = '<%= user.city %>' >
-          <input type='hidden' name='myUserState' value = '<%= user.state %>' >
-          <input type='hidden' name='myUserCountry' value = '<%= user.country %>' > 
-          <input type='hidden' name='myUserAddress' value='<%= user.address %>' > 
-          <input type='hidden' name='myUserJobRole' value = '<%= user.job_role %>' >
-          <input type='hidden' name='myUserCost' value = '<%= user.cost %>' >
-          <input type='hidden' name='myUserCapacity' value = '<%= user.capacity %>' >
-        <input type="image" class="myProfileImage" src="../css/images/user_profile.png" alt="Submit" style="float: right;">
-      </form>
-      <div><a href="/users/notification" class="notification" style="color: black;"><i class="fa fa-bell " style="font-size: 28px;" aria-hidden="true"></i>
-        <% if( notificationNumber != 0) { %>
-          
-        <span class="badge"><%= notificationNumber %></span>
-        <% } %>
-      </a></div>
+      
+       
+      <div></div>
     </div>
       <ul>
         <% if(typeof messages != 'undefined') { %>
@@ -104,7 +105,7 @@
     </nav>
     
         
-          <!-- ek chiz -->
+         
           <div class="cardsBox">
             <% for(var i=0; i < contactlist.length; i++) { %>
             <div class="card welcome" style="width: 18rem">
@@ -131,21 +132,27 @@
               <% } %>
       
    
-      <!-- <div class="split right">
-        <div class="centered"> -->
-          <!-- dusri chiz -->
-          <!-- <% for(var i=0; i < personlist.length; i++) { %>
-          <div class="card" style="width: 18rem">
-            <img src="../css/images/eb-1.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title"><%=personlist[i].name%></h5>
-              <p class="card-text">Buy eco-bricks from me!</p>
-              <a href="/users/buyform?id=<%=personlist[i].id%>" class="btn btn-primary">Interested</a>
-            </div>
-          </div>
-          <% } %>
-      </div> -->
+ 
       </div>
   
   </body>
 </html>
+
+  <!-- Optio
+      nal JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
