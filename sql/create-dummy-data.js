@@ -228,7 +228,7 @@ const obj = [
 
 for (let i = 0; i < obj.length; i++) {
   axios
-    .post('http://localhost:5000/users/register', obj[i])
+    .post('https://ecobricks.herokuapp.com/users/register', obj[i])
     .then(function (response) {
       console.log(response)
     })
