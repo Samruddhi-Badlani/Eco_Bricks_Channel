@@ -23,7 +23,7 @@
     </div> -->
     <form action="/users/profileUpdate" method="POST" class="GetInfoForm">
         <div class="Head">
-            <div class="flex-item-Head"> <img src="../css/images/user_profile.png" alt="" width="40px" height="40px"></div>
+            <!-- <div class="flex-item-Head"> <img src="../css/images/user_profile.png" alt="" width="40px" height="40px"></div> -->
             <div class="flex-item-Head"><span>
                    <h4><%= user.name %></h4> 
                 </span></div>
@@ -71,9 +71,10 @@
             <label class="labelFields" for="capacity">Capacity</label>
             <input class="inputFields form-control" type="number" name='capacity' id='country'  required value='<%=user.capacity %>' >
         </div>
-        <input type="submit" value="Save" id="submitProfile" class="btn btn-success">
-        <a href="/users/feedback" style="text-align: center;">Give feedback</a>
+        <input type="submit" value="Save" id="submitProfile" class="btn btn-success" />
+       
     </form>
+    <div class="text-center"><a href="/users/feedback"><button class="btn btn-info center">Give feedback</button> </a></div>
     <!-- <form action="/users/feedback" method="GET">
             
         <input type="submit" value="Give feedback">
