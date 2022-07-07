@@ -1,84 +1,75 @@
-.dashHead{
-    display: flex;
-    flex-direction:column ;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    margin: 10px;;
+.dashHead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 10px;
 }
-.myProfileImage{
-    margin-left: auto;
-    height: 40px;
-    margin-top: 10px;
-    width: 40px;
-}
-
-.Head{
-    padding:5px;
-    margin:10px;
-    display: flex;
-    flex-direction: row;
-    margin:0 auto;
-}
-.GetInfoForm{
-    display: flex;
-    width: 500px;;
-    flex-direction: column;
-    margin:0 auto;
-    background-color:#f0bd71;
-    box-shadow:  5px 5px 4px #f0bd71,
-    -5px -5px 4px #f0c8a8;
-    padding: 1%;
-    border-radius: 20px;;
-}
-#dashboard-image{
-    width:400px;
-    height:400px;
-
+.myProfileImage {
+  margin-left: auto;
+  height: 40px;
+  margin-top: 10px;
+  width: 40px;
 }
 
-.flex-item-Head{
-    padding: 10px;
-    margin: 10px;;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Head {
+  padding: 5px;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+.GetInfoForm {
+  display: flex;
+  width: 500px;
+  flex-direction: column;
+  margin: 0 auto;
+  /* background-color: #f0bd71;
+  box-shadow: 5px 5px 4px #f0bd71, -5px -5px 4px #f0c8a8; */
+  padding: 1%;
+  border-radius: 20px;
+}
+#dashboard-image {
+  width: 400px;
+  height: 400px;
 }
 
-.myInputBox{
-    display: flex;
-    flex-direction: row;
-  
-    
-
-}
-.labelFields{
-    padding: 10px;
-    margin:4px;
-    flex: 30%;
-    
-}
-.inputFields{
-    padding: 10px;
-    margin:4px;
-    flex: 60%;
+.flex-item-Head {
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#submitProfile{
-    cursor: pointer;
-    padding: 10px;
-    margin: 4px;
+.myInputBox {
+  display: flex;
+  flex-direction: row;
 }
-#submitProfile::hover{
-    background-color: rgb(90, 194, 90);
-    color:white;
+.labelFields {
+  padding: 10px;
+  margin: 4px;
+  flex: 30%;
 }
-a:link
-{
-      color: white;
+.inputFields {
+  padding: 10px;
+  margin: 4px;
+  flex: 60%;
 }
-.welcome:hover{
-    background-color: rgb(241, 212, 173);  
-                 box-shadow:  5px 5px 4px #f0bd71,
-             -5px -5px 4px #f0c8a8;
+
+#submitProfile {
+  cursor: pointer;
+  padding: 10px;
+  margin: 4px;
+}
+#submitProfile::hover {
+  background-color: rgba(255, 255, 255, 0.842);
+  color: white;
+}
+a:link {
+  color: white;
+}
+.welcome:hover {
+  background-color: rgba(255, 255, 255, 0.842);
 }
