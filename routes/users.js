@@ -443,4 +443,41 @@ router.post('/queryform', checkNotAuthenticated, (req, res) => {
     }
   )
 })
+router.post('/search', checkNotAuthenticated, async (req, res) => {
+  console.log('Search router called  ')
+  const data = await pool.query(
+    `SELECT * FROM form where userid = ${req.user.id}`
+  )
+  var contactlist = await pool.query(
+    `SELECT company, id FROM users where job_role = 'company' `
+  )
+  var personlist = await pool.query(
+    `SELECT name, id FROM users where job_role = 'individual' `
+  )
+  if (req.user.job_role == 'individual') {
+    personlist.rows.length = 0
+    contactlist = await pool.query(
+      `SELECT company, id FROM users where job_role = 'company' and company ILIKE $1`,
+      ['%' + req.body.searchByName + '%']
+    )
+    console.log('User is a individual Search company ', req.body.searchByName)
+  }
+  if (req.user.job_role == 'company') {
+    contactlist.rows.length = 0
+    console.log('User is a company Search person ', req.body.searchByName)
+    personlist = await pool.query(
+      `SELECT name, id FROM users where job_role = 'individual' and name ILIKE $1 `,
+      ['%' + req.body.searchByName + '%']
+    )
+  }
+  console.log(req.isAuthenticated())
+
+  res.render('dashboard', {
+    user: req.user,
+    my_null_value: req.user.xyz,
+    contactlist: contactlist.rows,
+    personlist: personlist.rows,
+    notificationNumber: data.rows.length,
+  })
+})
 module.exports = router
