@@ -10,7 +10,7 @@ const initializePassport = require('./passportConfig')
 initializePassport(passport)
 
 const users = require('./routes/users')
-const info = require('./routes/info')
+
 const pool = require('./db')
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
@@ -36,7 +36,6 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-app.use('/', info)
 app.use('/users', users)
 
 // catch 404 and forward to error handler

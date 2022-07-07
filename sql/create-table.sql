@@ -15,4 +15,4 @@ ADD  city character varying(40),
 ADD    country character varying(50), 
 ADD    address character varying(900),
 ADD    cost numeric,
- ADD   capacity numeric
+ ADD   capacity numeric;
